@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  position: relative;
+}
+
+.card {
+  position: relative;
+  background-image: url("images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  box-sizing: border-box;
+}
+.card-back img,
+.card-front img {
+  width: 70%;
+  height: 70%;
+  position: relative;
+}
+
+.card-back img {
+  padding-top: 10%;
+  transform: translateX(15%);
+  z-index: 0;
+}
+
+.card-front img {
+  transform: translate(-15%, -47%);
+  z-index: 1;
+}
+
+.card-back span {
+  position: absolute;
+  font-size: 12px;
+  color: white;
+  top: 30%;
+  left: 80%;
+}
+
+.card-details {
+  font-size: 11px;
+  font-weight: 300;
+  position: absolute;
+  text-align: left;
+  width: 60%;
+  top: 45%;
+  left: 10%;
+  display: grid;
+  color: white;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto 1fr;
+  z-index: 1;
+  column-gap: 5%;
+  row-gap: 20%;
+}
+.card-details span:nth-child(2) {
+  grid-area: 2/1/2/3;
+  font-size: 16px;
+  font-weight: 500;
+}
+.date {
+  text-align: right;
+}
+.date span:nth-child(2) {
+  font-size: 11px;
+  font-weight: 300;
+}
+
+#logo {
+  display: grid;
+  grid-area: 1/1/1/3;
+  width: 18%;
+  height: 80%;
+}
+
+.card-form {
+  font-family: "Space Grotesk", sans-serif;
+  position: absolute;
+  display: flex;
+  left: 0%;
+  top: 95%;
+  width: 85%;
+  letter-spacing: 2px;
+  padding-left: 5%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  font-size: 11px;
+  font-weight: 800;
+  color: hsl(278, 68%, 11%);
+}
+label {
+  margin-bottom: 2%;
+}
+input {
+  box-sizing: border-box;
+  width: 85vw;
+  height: 6vh;
+  border: solid 2px hsl(270, 3%, 87%);
+  border-radius: 5px;
+  padding-left: 5%;
+}
+
+input::placeholder {
+  font-size: 15px;
+}
+
+.date_cvv {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  column-gap: 5%;
+  width: 100%;
+  height: 100%;
+}
+.exp_date {
+  display: grid;
+}
+
+input[name="exp_month"],
+input[name="exp_year"] {
+  width: 20vw;
+}
+
+input[name="exp_month"] {
+  padding-left: 15%;
+}
+input[name="exp_year"] {
+  position: relative;
+  padding-left: 10%;
+  margin-left: 15%;
+}
+
+label[for="exp_date"] {
+  grid-area: 1/1/1/3;
+}
+.cvv {
+  display: grid;
+}
+input[name="cvv"] {
+  width: 40vw;
+}
+
+input[type="submit"] {
+  margin-top: 3%;
+  width: 100%;
+  height: 7vh;
+  font-size: 15px;
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid hsl(278, 68%, 11%);
+}
+
+.card-input span {
+  padding: 2%;
+  color: hsl(0, 100%, 66%);
+  display: none;
+}
+
+.card-input {
+  display: block;
+}
+
+.end {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+}
+.thank_you {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+}
+
+.thank_you span:nth-child(2) {
+  color: hsl(278, 68%, 11%);
+  font-size: 25px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.thank_you span:nth-child(3) {
+  color: hsl(279, 6%, 55%);
+  padding-bottom: 5%;
+}
+
+.thank_you input[type="button"] {
+  margin-top: 3%;
+  width: 100%;
+  height: 7vh;
+  font-size: 15px;
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+@media (280px <= width <= 480px) {
+  .card-back span {
+    font-size: 14px;
+  }
+
+  .card-details {
+    font-size: 13px;
+  }
+
+  .card-details span:nth-child(2) {
+    font-size: 18px;
+  }
+  .date span:nth-child(2) {
+    font-size: 13px;
+  }
+}
+
+@media (1000px <= width <= 1440px) {
+  .bg {
+    position: absolute;
+    background-image: url("images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 100vh;
+    z-index: 0;
+  }
+
+  .card {
+    background-image: none;
+  }
+  .card-back img,
+  .card-front img {
+    width: 30%;
+    height: 40%;
+    z-index: 0;
+  }
+
+  .card-back img {
+    transform: translate(-60%, 120%);
+  }
+
+  .card-front img {
+    transform: translate(-90%, -40%);
+  }
+
+  .card-back span {
+    font-size: 15px;
+    color: white;
+    top: 111%;
+    right: 56%;
+    left: unset;
+    z-index: 1;
+  }
+
+  .card-details span:nth-child(2) {
+    font-size: 22px;
+  }
+
+  .date span:nth-child(2) {
+    font-size: 17px;
+  }
+  .card-details {
+    font-size: 17px;
+    width: 30%;
+    top: 52%;
+    left: 10%;
+    row-gap: 10%;
+  }
+
+  .date {
+    padding-right: 20%;
+  }
+  #logo {
+    position: relative;
+    width: 9vw;
+    height: 7vh;
+    left: 25%;
+    top: 15%;
+  }
+
+  .card-form {
+    top: 50%;
+    left: 50%;
+    width: 20%;
+  }
+
+  input {
+    width: 40vw;
+    height: 6vh;
+  }
+
+  .date_cvv {
+    column-gap: 13%;
+  }
+
+  input[name="exp_month"],
+  input[name="exp_year"] {
+    width: 10vw;
+  }
+
+  input[name="exp_month"] {
+    padding-left: 10%;
+  }
+
+  input[name="cvv"] {
+    width: 17vw;
+  }
+
+  input[type="submit"] {
+    margin-top: 7%;
+    width: 200%;
+  }
+
+  .end {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+  }
+  .thank_you {
+    width: 100%;
+  }
+
+  .thank_you input[type="button"] {
+    width: 120%;
+  }
+}
